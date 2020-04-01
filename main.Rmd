@@ -1,7 +1,7 @@
 ---
 title: ' Flying Blind: Education Reform in Latin America in the 1990s'
 author: "Thomas R. Vargas^[Corresponding address:
-  varga081@umn.edu. I thank Teri Caraway, Brent Edwards, John Freeman, Carly Potz-Nielsen, Claire Le Barebenchon, Dave Lopez, and David Samuels for their comments on previous drafts of this papers. A previous version of this paper was presented at the Midwest Political Science Association Meeting, and seminar at the University of Minnesota and Duke University. Any remaining mistakes are my own.]"
+  varga081@umn.edu. I thank Teri Caraway, Brent Edwards, John Freeman, Carly Potz-Nielsen, Claire Le Barebenchon, Dave Lopez, and David Samuels for their comments on previous drafts of this papers. A previous version of this paper was presented at the Midwest Political Science Association Meeting, and seminars at the University of Minnesota and Duke University. Any remaining mistakes are my own.]"
 abstract: \singlespacing Conventional wisdom suggests that Latin American countries reformed public education in the 1990s in response to a crisis of coverage and quality.  Yet, in terms of access, Latin American countries had achieved relatively high enrolment and completion rates by 1990.  With regards to quality, there was simply no high-quality evidence showing weak or lowering standards. In short, by the early 1990s, there was very little scientific evidence of a crisis of public education in Latin America. By uncovering these patterns, this paper argues that political scientist should revisit the origins of education reform efforts in the 1990s.  
 date: "March 31, 2020"
 bibliography: bib.bib
