@@ -1,5 +1,4 @@
 \usepackage[english]{babel}
-\usepackage[T1]{fontenc}
 \usepackage{float}
 \usepackage{lmodern}
 \usepackage{graphicx}
@@ -23,7 +22,7 @@
 
 \usepackage{cleveref}[2012/02/15]
 \usepackage{fullpage}
-\renewcommand{\rmdefault}{bch}
+\usepackage{charter}
 \usepackage{bm}
 \usepackage{tabu}
 \usepackage{wrapfig}
@@ -38,8 +37,11 @@
     urlcolor=magenta,
 }
 
-\renewcommand{\rmdefault}{bch}
 \usepackage{caption}
 
-\setlength{\parindent}{4em}
-\setlength{\parskip}{.2em}
+\setlength{\parindent}{1cm}
+%\setlength{\parskip}{.2em}
+
+\usepackage{threeparttable}
+\newcommand\fnote[1]{\captionsetup{font=small}\caption*{#1}}
+
