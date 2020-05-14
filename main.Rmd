@@ -67,9 +67,7 @@ Let us examine the state of education in Latin America by the 1990s. Consider fi
 #Packages
 # Load data
 library(tidyverse)
-qog<-read_csv("data/qog_std_ts_jan19.csv") %>%
-  select(year, ccode, cname, wdi_gerp, wdi_nerp, wdi_gerpf, wdi_nerpf, ccodecow, ccodealp, wdi_expedu,
-         bl_asyf, bl_lpf, bl_lpmf, gea_ea1524f, gea_ea1524m, wdi_expedup, ht_region, gle_cgdpc, gle_rgdpc, bl_asymf)
+qog<-read_csv("data/qog_std_ts_jan19.csv") 
 
 fig2a<-qog %>%
   filter(ht_region==2) %>%
