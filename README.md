@@ -7,4 +7,4 @@ Thomas R. Vargas
 *This version of the paper does not include graphs or tables. Please email me for a full pre-print.*
 
 
-Forthcoming in the [International Journal of Educational Reform](https://journals.sagepub.com/home/ref).
+Accepted at the [International Journal of Educational Reform](https://journals.sagepub.com/home/ref).

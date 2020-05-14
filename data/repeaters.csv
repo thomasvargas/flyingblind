@@ -1,0 +1,559 @@
+country_name,year,country_code,repeaters
+Argentina,1970,ARG,11.38488
+Argentina,1971,ARG,10.37942
+Argentina,1972,ARG,
+Argentina,1973,ARG,
+Argentina,1974,ARG,9.8172398
+Argentina,1975,ARG,8.6526899
+Argentina,1976,ARG,8.1134596
+Argentina,1977,ARG,
+Argentina,1978,ARG,
+Argentina,1979,ARG,
+Argentina,1980,ARG,
+Argentina,1981,ARG,
+Argentina,1982,ARG,
+Argentina,1983,ARG,
+Argentina,1984,ARG,
+Argentina,1985,ARG,
+Argentina,1986,ARG,
+Argentina,1987,ARG,
+Argentina,1988,ARG,
+Argentina,1989,ARG,
+Argentina,1990,ARG,
+Argentina,1991,ARG,
+Argentina,1992,ARG,
+Argentina,1993,ARG,
+Argentina,1994,ARG,5.5771899
+Argentina,1995,ARG,
+Argentina,1996,ARG,5.5652699
+Argentina,1997,ARG,5.2732701
+Argentina,1998,ARG,5.4667001
+Argentina,1999,ARG,5.9442301
+Argentina,2000,ARG,6.14958
+Bolivia,1970,BOL,
+Bolivia,1971,BOL,
+Bolivia,1972,BOL,
+Bolivia,1973,BOL,
+Bolivia,1974,BOL,
+Bolivia,1975,BOL,
+Bolivia,1976,BOL,
+Bolivia,1977,BOL,
+Bolivia,1978,BOL,
+Bolivia,1979,BOL,
+Bolivia,1980,BOL,
+Bolivia,1981,BOL,
+Bolivia,1982,BOL,
+Bolivia,1983,BOL,
+Bolivia,1984,BOL,
+Bolivia,1985,BOL,
+Bolivia,1986,BOL,
+Bolivia,1987,BOL,
+Bolivia,1988,BOL,
+Bolivia,1989,BOL,
+Bolivia,1990,BOL,
+Bolivia,1991,BOL,
+Bolivia,1992,BOL,
+Bolivia,1993,BOL,
+Bolivia,1994,BOL,
+Bolivia,1995,BOL,
+Bolivia,1996,BOL,
+Bolivia,1997,BOL,
+Bolivia,1998,BOL,
+Bolivia,1999,BOL,
+Bolivia,2000,BOL,
+Brazil,1970,BRA,19.2407
+Brazil,1971,BRA,16.121481
+Brazil,1972,BRA,18.031919
+Brazil,1973,BRA,18.10417
+Brazil,1974,BRA,17.584419
+Brazil,1975,BRA,17.172951
+Brazil,1976,BRA,19.254829
+Brazil,1977,BRA,21.31757
+Brazil,1978,BRA,21.58182
+Brazil,1979,BRA,17.615061
+Brazil,1980,BRA,21.6938
+Brazil,1981,BRA,21.700491
+Brazil,1982,BRA,21.750589
+Brazil,1983,BRA,
+Brazil,1984,BRA,20.9128
+Brazil,1985,BRA,19.58827
+Brazil,1986,BRA,
+Brazil,1987,BRA,19.829451
+Brazil,1988,BRA,
+Brazil,1989,BRA,
+Brazil,1990,BRA,
+Brazil,1991,BRA,
+Brazil,1992,BRA,18.14645
+Brazil,1993,BRA,18.3859
+Brazil,1994,BRA,19.12068
+Brazil,1995,BRA,
+Brazil,1996,BRA,
+Brazil,1997,BRA,
+Brazil,1998,BRA,
+Brazil,1999,BRA,24.044121
+Brazil,2000,BRA,25.011271
+Chile,1970,CHL,11.62474
+Chile,1971,CHL,8.9005899
+Chile,1972,CHL,9.1065197
+Chile,1973,CHL,12.45094
+Chile,1974,CHL,12.95822
+Chile,1975,CHL,13.3911
+Chile,1976,CHL,13.32612
+Chile,1977,CHL,13.76415
+Chile,1978,CHL,
+Chile,1979,CHL,
+Chile,1980,CHL,
+Chile,1981,CHL,
+Chile,1982,CHL,
+Chile,1983,CHL,8.0335503
+Chile,1984,CHL,
+Chile,1985,CHL,
+Chile,1986,CHL,
+Chile,1987,CHL,
+Chile,1988,CHL,
+Chile,1989,CHL,
+Chile,1990,CHL,
+Chile,1991,CHL,
+Chile,1992,CHL,
+Chile,1993,CHL,
+Chile,1994,CHL,
+Chile,1995,CHL,
+Chile,1996,CHL,
+Chile,1997,CHL,4.1531701
+Chile,1998,CHL,
+Chile,1999,CHL,
+Chile,2000,CHL,
+Colombia,1970,COL,16.61191
+Colombia,1971,COL,16.13698
+Colombia,1972,COL,16.02593
+Colombia,1973,COL,15.3733
+Colombia,1974,COL,15.35765
+Colombia,1975,COL,
+Colombia,1976,COL,
+Colombia,1977,COL,
+Colombia,1978,COL,
+Colombia,1979,COL,
+Colombia,1980,COL,
+Colombia,1981,COL,
+Colombia,1982,COL,13.17967
+Colombia,1983,COL,12.70527
+Colombia,1984,COL,12.33472
+Colombia,1985,COL,16.953251
+Colombia,1986,COL,16.953251
+Colombia,1987,COL,12.33472
+Colombia,1988,COL,12.33472
+Colombia,1989,COL,12.33472
+Colombia,1990,COL,11.43768
+Colombia,1991,COL,11.38588
+Colombia,1992,COL,12.33001
+Colombia,1993,COL,7.30797
+Colombia,1994,COL,9.2207899
+Colombia,1995,COL,9.3074598
+Colombia,1996,COL,7.2309499
+Colombia,1997,COL,
+Colombia,1998,COL,4.6332598
+Colombia,1999,COL,5.2032099
+Colombia,2000,COL,5.3544202
+Costa Rica,1970,CRI,10.33809
+Costa Rica,1971,CRI,11.04641
+Costa Rica,1972,CRI,5.8572798
+Costa Rica,1973,CRI,2.03369
+Costa Rica,1974,CRI,2.65696
+Costa Rica,1975,CRI,6.4748998
+Costa Rica,1976,CRI,7.5380402
+Costa Rica,1977,CRI,7.31283
+Costa Rica,1978,CRI,7.6746001
+Costa Rica,1979,CRI,7.6658502
+Costa Rica,1980,CRI,7.8752599
+Costa Rica,1981,CRI,7.4110198
+Costa Rica,1982,CRI,7.1956601
+Costa Rica,1983,CRI,11.58261
+Costa Rica,1984,CRI,10.96111
+Costa Rica,1985,CRI,10.5697
+Costa Rica,1986,CRI,9.7349005
+Costa Rica,1987,CRI,10.27091
+Costa Rica,1988,CRI,10.68231
+Costa Rica,1989,CRI,11.008
+Costa Rica,1990,CRI,11.291
+Costa Rica,1991,CRI,10.5282
+Costa Rica,1992,CRI,9.5544205
+Costa Rica,1993,CRI,8.1058598
+Costa Rica,1994,CRI,8.7245102
+Costa Rica,1995,CRI,9.3492203
+Costa Rica,1996,CRI,11.40333
+Costa Rica,1997,CRI,
+Costa Rica,1998,CRI,
+Costa Rica,1999,CRI,8.9019899
+Costa Rica,2000,CRI,8.0594397
+Dominican Republic,1970,DOM,
+Dominican Republic,1971,DOM,22.2987
+Dominican Republic,1972,DOM,
+Dominican Republic,1973,DOM,
+Dominican Republic,1974,DOM,
+Dominican Republic,1975,DOM,
+Dominican Republic,1976,DOM,
+Dominican Republic,1977,DOM,
+Dominican Republic,1978,DOM,
+Dominican Republic,1979,DOM,
+Dominican Republic,1980,DOM,
+Dominican Republic,1981,DOM,18.01
+Dominican Republic,1982,DOM,
+Dominican Republic,1983,DOM,
+Dominican Republic,1984,DOM,
+Dominican Republic,1985,DOM,
+Dominican Republic,1986,DOM,
+Dominican Republic,1987,DOM,
+Dominican Republic,1988,DOM,
+Dominican Republic,1989,DOM,
+Dominican Republic,1990,DOM,
+Dominican Republic,1991,DOM,
+Dominican Republic,1992,DOM,
+Dominican Republic,1993,DOM,
+Dominican Republic,1994,DOM,14.2769
+Dominican Republic,1995,DOM,
+Dominican Republic,1996,DOM,
+Dominican Republic,1997,DOM,
+Dominican Republic,1998,DOM,
+Dominican Republic,1999,DOM,4.11695
+Dominican Republic,2000,DOM,5.11026
+Ecuador,1970,ECU,
+Ecuador,1971,ECU,12.38537
+Ecuador,1972,ECU,13.91618
+Ecuador,1973,ECU,11.7707
+Ecuador,1974,ECU,13.0486
+Ecuador,1975,ECU,10.8371
+Ecuador,1976,ECU,11.39691
+Ecuador,1977,ECU,11.21283
+Ecuador,1978,ECU,12.63275
+Ecuador,1979,ECU,13.16179
+Ecuador,1980,ECU,10.96869
+Ecuador,1981,ECU,9.6550903
+Ecuador,1982,ECU,9.6561203
+Ecuador,1983,ECU,8.9088202
+Ecuador,1984,ECU,8.62747
+Ecuador,1985,ECU,8.4626503
+Ecuador,1986,ECU,
+Ecuador,1987,ECU,6.73102
+Ecuador,1988,ECU,6.1690202
+Ecuador,1989,ECU,
+Ecuador,1990,ECU,
+Ecuador,1991,ECU,
+Ecuador,1992,ECU,
+Ecuador,1993,ECU,
+Ecuador,1994,ECU,4.76089
+Ecuador,1995,ECU,4.4526401
+Ecuador,1996,ECU,4.0090399
+Ecuador,1997,ECU,3.45191
+Ecuador,1998,ECU,
+Ecuador,1999,ECU,2.70818
+Ecuador,2000,ECU,2.3726799
+El Salvador,1970,SLV,
+El Salvador,1971,SLV,17.436501
+El Salvador,1972,SLV,9.3855104
+El Salvador,1973,SLV,7.6098299
+El Salvador,1974,SLV,8.3035498
+El Salvador,1975,SLV,8.5655203
+El Salvador,1976,SLV,8.7469902
+El Salvador,1977,SLV,8.7388096
+El Salvador,1978,SLV,
+El Salvador,1979,SLV,
+El Salvador,1980,SLV,
+El Salvador,1981,SLV,10.368
+El Salvador,1982,SLV,9.3537998
+El Salvador,1983,SLV,9.1247702
+El Salvador,1984,SLV,9.83564
+El Salvador,1985,SLV,
+El Salvador,1986,SLV,
+El Salvador,1987,SLV,8.8771601
+El Salvador,1988,SLV,8.2571201
+El Salvador,1989,SLV,9.3765697
+El Salvador,1990,SLV,
+El Salvador,1991,SLV,9.6196699
+El Salvador,1992,SLV,8.0746698
+El Salvador,1993,SLV,9.1385803
+El Salvador,1994,SLV,
+El Salvador,1995,SLV,7.3692698
+El Salvador,1996,SLV,5.1088099
+El Salvador,1997,SLV,
+El Salvador,1998,SLV,7.5229802
+El Salvador,1999,SLV,
+El Salvador,2000,SLV,6.6548901
+Guatemala,1970,GTM,15.80194
+Guatemala,1971,GTM,16.229231
+Guatemala,1972,GTM,15.65052
+Guatemala,1973,GTM,
+Guatemala,1974,GTM,
+Guatemala,1975,GTM,14.83306
+Guatemala,1976,GTM,14.12338
+Guatemala,1977,GTM,15.21666
+Guatemala,1978,GTM,15.15025
+Guatemala,1979,GTM,14.66662
+Guatemala,1980,GTM,14.97105
+Guatemala,1981,GTM,15.84206
+Guatemala,1982,GTM,18.335819
+Guatemala,1983,GTM,15.4315
+Guatemala,1984,GTM,15.30869
+Guatemala,1985,GTM,13.0931
+Guatemala,1986,GTM,4.32656
+Guatemala,1987,GTM,
+Guatemala,1988,GTM,
+Guatemala,1989,GTM,
+Guatemala,1990,GTM,
+Guatemala,1991,GTM,
+Guatemala,1992,GTM,
+Guatemala,1993,GTM,16.20895
+Guatemala,1994,GTM,
+Guatemala,1995,GTM,
+Guatemala,1996,GTM,15.28914
+Guatemala,1997,GTM,
+Guatemala,1998,GTM,
+Guatemala,1999,GTM,14.85946
+Guatemala,2000,GTM,14.4805
+Honduras,1970,HND,
+Honduras,1971,HND,
+Honduras,1972,HND,
+Honduras,1973,HND,
+Honduras,1974,HND,
+Honduras,1975,HND,
+Honduras,1976,HND,
+Honduras,1977,HND,
+Honduras,1978,HND,
+Honduras,1979,HND,
+Honduras,1980,HND,16.171301
+Honduras,1981,HND,
+Honduras,1982,HND,16.027281
+Honduras,1983,HND,
+Honduras,1984,HND,15.46094
+Honduras,1985,HND,
+Honduras,1986,HND,
+Honduras,1987,HND,
+Honduras,1988,HND,
+Honduras,1989,HND,
+Honduras,1990,HND,
+Honduras,1991,HND,12.08052
+Honduras,1992,HND,11.37278
+Honduras,1993,HND,11.72906
+Honduras,1994,HND,12.01877
+Honduras,1995,HND,10.95495
+Honduras,1996,HND,10.2837
+Honduras,1997,HND,9.7475405
+Honduras,1998,HND,8.9943399
+Honduras,1999,HND,
+Honduras,2000,HND,
+Mexico,1970,MEX,
+Mexico,1971,MEX,
+Mexico,1972,MEX,
+Mexico,1973,MEX,
+Mexico,1974,MEX,
+Mexico,1975,MEX,11.65193
+Mexico,1976,MEX,11.04825
+Mexico,1977,MEX,9.8331299
+Mexico,1978,MEX,9.6309099
+Mexico,1979,MEX,9.3753996
+Mexico,1980,MEX,10.36065
+Mexico,1981,MEX,9.7648802
+Mexico,1982,MEX,9.9471798
+Mexico,1983,MEX,10.31208
+Mexico,1984,MEX,10.18917
+Mexico,1985,MEX,10.04
+Mexico,1986,MEX,9.89639
+Mexico,1987,MEX,9.9212303
+Mexico,1988,MEX,9.5422802
+Mexico,1989,MEX,9.3311195
+Mexico,1990,MEX,9.6421604
+Mexico,1991,MEX,9.3903503
+Mexico,1992,MEX,9.0686798
+Mexico,1993,MEX,8.6944304
+Mexico,1994,MEX,7.2315302
+Mexico,1995,MEX,7.0376501
+Mexico,1996,MEX,6.7974801
+Mexico,1997,MEX,6.9194598
+Mexico,1998,MEX,
+Mexico,1999,MEX,6.6008501
+Mexico,2000,MEX,6.21841
+Nicaragua,1970,NIC,12.76723
+Nicaragua,1971,NIC,11.11247
+Nicaragua,1972,NIC,13.21175
+Nicaragua,1973,NIC,11.08575
+Nicaragua,1974,NIC,13.70082
+Nicaragua,1975,NIC,
+Nicaragua,1976,NIC,
+Nicaragua,1977,NIC,13.34052
+Nicaragua,1978,NIC,14.11238
+Nicaragua,1979,NIC,12.27999
+Nicaragua,1980,NIC,16.92749
+Nicaragua,1981,NIC,
+Nicaragua,1982,NIC,15.32342
+Nicaragua,1983,NIC,17.72551
+Nicaragua,1984,NIC,8.6896
+Nicaragua,1985,NIC,15.40056
+Nicaragua,1986,NIC,13.70095
+Nicaragua,1987,NIC,14.57656
+Nicaragua,1988,NIC,15.40344
+Nicaragua,1989,NIC,16.72364
+Nicaragua,1990,NIC,16.56739
+Nicaragua,1991,NIC,16.39534
+Nicaragua,1992,NIC,16.6185
+Nicaragua,1993,NIC,16.992149
+Nicaragua,1994,NIC,15.01896
+Nicaragua,1995,NIC,14.82016
+Nicaragua,1996,NIC,
+Nicaragua,1997,NIC,
+Nicaragua,1998,NIC,
+Nicaragua,1999,NIC,4.7028098
+Nicaragua,2000,NIC,5.1191702
+Panama,1970,PAN,15.40345
+Panama,1971,PAN,14.41205
+Panama,1972,PAN,13.52294
+Panama,1973,PAN,12.89499
+Panama,1974,PAN,13.63636
+Panama,1975,PAN,12.60673
+Panama,1976,PAN,10.98798
+Panama,1977,PAN,11.23005
+Panama,1978,PAN,11.40499
+Panama,1979,PAN,12.57032
+Panama,1980,PAN,12.72302
+Panama,1981,PAN,12.42487
+Panama,1982,PAN,12.30059
+Panama,1983,PAN,11.72796
+Panama,1984,PAN,12.35502
+Panama,1985,PAN,13.1489
+Panama,1986,PAN,11.50121
+Panama,1987,PAN,11.39202
+Panama,1988,PAN,11.02369
+Panama,1989,PAN,9.9798203
+Panama,1990,PAN,
+Panama,1991,PAN,
+Panama,1992,PAN,
+Panama,1993,PAN,
+Panama,1994,PAN,
+Panama,1995,PAN,
+Panama,1996,PAN,
+Panama,1997,PAN,
+Panama,1998,PAN,
+Panama,1999,PAN,6.3649101
+Panama,2000,PAN,5.9953799
+Paraguay,1970,PRY,17.66778
+Paraguay,1971,PRY,17.495199
+Paraguay,1972,PRY,17.532391
+Paraguay,1973,PRY,17.195311
+Paraguay,1974,PRY,16.78425
+Paraguay,1975,PRY,15.34066
+Paraguay,1976,PRY,14.67345
+Paraguay,1977,PRY,14.11873
+Paraguay,1978,PRY,14.14611
+Paraguay,1979,PRY,
+Paraguay,1980,PRY,13.59968
+Paraguay,1981,PRY,13.15888
+Paraguay,1982,PRY,12.82782
+Paraguay,1983,PRY,10.23057
+Paraguay,1984,PRY,11.17532
+Paraguay,1985,PRY,10.59892
+Paraguay,1986,PRY,9.5839701
+Paraguay,1987,PRY,9.3422499
+Paraguay,1988,PRY,8.9327002
+Paraguay,1989,PRY,9.1046
+Paraguay,1990,PRY,8.5546799
+Paraguay,1991,PRY,8.8952198
+Paraguay,1992,PRY,8.9735403
+Paraguay,1993,PRY,8.26015
+Paraguay,1994,PRY,8.1135101
+Paraguay,1995,PRY,7.9179301
+Paraguay,1996,PRY,9.0903196
+Paraguay,1997,PRY,
+Paraguay,1998,PRY,8.5576401
+Paraguay,1999,PRY,7.7856498
+Paraguay,2000,PRY,7.6511998
+Peru,1970,PER,17.02706
+Peru,1971,PER,
+Peru,1972,PER,
+Peru,1973,PER,18.412689
+Peru,1974,PER,15.2058
+Peru,1975,PER,10.19846
+Peru,1976,PER,8.7925596
+Peru,1977,PER,9.3776903
+Peru,1978,PER,15.19061
+Peru,1979,PER,15.83065
+Peru,1980,PER,18.81514
+Peru,1981,PER,18.537109
+Peru,1982,PER,
+Peru,1983,PER,
+Peru,1984,PER,
+Peru,1985,PER,14.12521
+Peru,1986,PER,
+Peru,1987,PER,
+Peru,1988,PER,
+Peru,1989,PER,
+Peru,1990,PER,
+Peru,1991,PER,
+Peru,1992,PER,
+Peru,1993,PER,14.23832
+Peru,1994,PER,
+Peru,1995,PER,15.23532
+Peru,1996,PER,
+Peru,1997,PER,
+Peru,1998,PER,9.7713699
+Peru,1999,PER,10.21167
+Peru,2000,PER,10.65017
+Uruguay,1970,URY,14.39525
+Uruguay,1971,URY,13.60661
+Uruguay,1972,URY,13.62912
+Uruguay,1973,URY,13.37752
+Uruguay,1974,URY,14.00556
+Uruguay,1975,URY,
+Uruguay,1976,URY,13.78607
+Uruguay,1977,URY,12.94422
+Uruguay,1978,URY,12.87958
+Uruguay,1979,URY,13.01117
+Uruguay,1980,URY,12.42306
+Uruguay,1981,URY,
+Uruguay,1982,URY,
+Uruguay,1983,URY,
+Uruguay,1984,URY,
+Uruguay,1985,URY,11.34572
+Uruguay,1986,URY,10.26085
+Uruguay,1987,URY,9.7668695
+Uruguay,1988,URY,9.0285397
+Uruguay,1989,URY,8.5709801
+Uruguay,1990,URY,9.1618204
+Uruguay,1991,URY,10.32574
+Uruguay,1992,URY,10.22573
+Uruguay,1993,URY,9.8357801
+Uruguay,1994,URY,9.8922997
+Uruguay,1995,URY,9.7081699
+Uruguay,1996,URY,9.4767199
+Uruguay,1997,URY,8.2088203
+Uruguay,1998,URY,8.4024801
+Uruguay,1999,URY,7.9312701
+Uruguay,2000,URY,8.89855
+"Venezuela, RB",1970,VEN,
+"Venezuela, RB",1971,VEN,2.15011
+"Venezuela, RB",1972,VEN,2.66418
+"Venezuela, RB",1973,VEN,2.54212
+"Venezuela, RB",1974,VEN,2.65202
+"Venezuela, RB",1975,VEN,2.8836901
+"Venezuela, RB",1976,VEN,2.72191
+"Venezuela, RB",1977,VEN,2.53635
+"Venezuela, RB",1978,VEN,7.57899
+"Venezuela, RB",1979,VEN,8.5816402
+"Venezuela, RB",1980,VEN,9.2756701
+"Venezuela, RB",1981,VEN,9.8403597
+"Venezuela, RB",1982,VEN,9.9445
+"Venezuela, RB",1983,VEN,9.9852104
+"Venezuela, RB",1984,VEN,9.8840399
+"Venezuela, RB",1985,VEN,9.7035999
+"Venezuela, RB",1986,VEN,9.4168997
+"Venezuela, RB",1987,VEN,9.2349396
+"Venezuela, RB",1988,VEN,9.4660902
+"Venezuela, RB",1989,VEN,9.9875298
+"Venezuela, RB",1990,VEN,10.19541
+"Venezuela, RB",1991,VEN,10.47982
+"Venezuela, RB",1992,VEN,10.64067
+"Venezuela, RB",1993,VEN,10.98845
+"Venezuela, RB",1994,VEN,
+"Venezuela, RB",1995,VEN,
+"Venezuela, RB",1996,VEN,10.18429
+"Venezuela, RB",1997,VEN,9.8871899
+"Venezuela, RB",1998,VEN,
+"Venezuela, RB",1999,VEN,7.0141301
+"Venezuela, RB",2000,VEN,6.6831899

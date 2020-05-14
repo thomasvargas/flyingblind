@@ -67,15 +67,15 @@ Let us examine the state of education in Latin America by the 1990s. Consider fi
 #Packages
 # Load data
 library(tidyverse)
-qog<-read_csv("data/qog_std_ts_jan19.csv")
-
-hist(qog$ht_region)
+qog<-read_csv("data/qog_std_ts_jan19.csv") %>%
+  select(year, ccode, cname, wdi_gerp, wdi_nerp, wdi_gerpf, wdi_nerpf, ccodecow, ccodealp, wdi_expedu,
+         bl_asyf, bl_lpf, bl_lpmf, gea_ea1524f, gea_ea1524m, wdi_expedup, ht_region, gle_cgdpc, gle_rgdpc, bl_asymf)
 
 fig2a<-qog %>%
   filter(ht_region==2) %>%
   group_by(year) %>%
-  summarise(ave = mean(wdi_gerpf,na.rm = TRUE),
-            min = min(wdi_gerpf,na.rm = TRUE)) %>%
+  summarise(ave = mean(wdi_gerp,na.rm = TRUE),
+            min = min(wdi_gerp,na.rm = TRUE)) %>%
   pivot_longer(-year, names_to = "type", values_to = "y") %>%
   ggplot(aes(x=year, y=y, group=type, color=type, linetype=type)) +
     scale_color_discrete(name="Line",
@@ -97,13 +97,13 @@ fig2a<-qog %>%
 data_global<-qog %>%
   filter(ht_region!=2) %>%
   group_by(year) %>%
-  summarise(ave = mean(wdi_nerpf,na.rm = TRUE)) %>%
+  summarise(ave = mean(wdi_nerp,na.rm = TRUE)) %>%
   mutate(type="global")
 
 data_lac<-qog %>%
   filter(ht_region==2) %>%
   group_by(year) %>%
-  summarise(ave = mean(wdi_nerpf,na.rm = TRUE)) %>%
+  summarise(ave = mean(wdi_nerp,na.rm = TRUE)) %>%
   mutate(type="lac")
 
 data_together<-rbind(data_global, data_lac)
@@ -138,9 +138,116 @@ The left panel of Figure 2 graphs average gross enrollment rates (GER) in primar
 
 The right panel of Figure 2 showcases average completion rates for Latin America in green, low- and middle-income economies in blue, and the world in red. Notice that the average trend in completion rates in the right panel tracks the enrollment rates in the left panel quite closely. This suggests that the trends in the left panel reflect an underlying improvement in completion rates over time. In general, the evidence shows that over time the number of children enrolling in and completing school has, on average, grown since the 1970s. Second, while it is true that completion rates stagnated during the 1980s, they did so at fairly high levels—around 90%. Overall, this points to well-performing education systems.
 
+```{r, fig3_dataload, include=FALSE, cache=F}
+#Packages
+
+fig3a<-qog %>%
+  filter(ht_region==2) %>%
+  group_by(year) %>%
+  summarise(ave = mean(wdi_gerpf,na.rm = TRUE),
+            min = min(wdi_gerpf,na.rm = TRUE)) %>%
+  pivot_longer(-year, names_to = "type", values_to = "y") %>%
+  ggplot(aes(x=year, y=y, group=type, color=type, linetype=type)) +
+    scale_color_discrete(name="Line",
+                       breaks = c("ave", "min"),
+                       labels = c("Average", "Minimum")) +
+      scale_linetype_discrete(name="Line",
+                       breaks = c("ave", "min"),
+                       labels = c("Average", "Minimum")) +
+    geom_line() +
+    xlim(1970,2000) +
+    ylim(40,120) +
+    theme_bw() +
+    theme(legend.title = element_blank(),
+          legend.position = c(0.8, 0.2))+
+      labs(title="Female Primary School Enrollment Rates",
+         x="Year",
+         y="Gross Share (%)")
+
+fig3b<-qog %>%
+  filter(ht_region==2) %>%
+  group_by(year) %>%
+  summarise(ave = mean(bl_asyf,na.rm = F),
+            min = min(bl_asyf,na.rm = F)) %>%
+  pivot_longer(-year, names_to = "type", values_to = "y") %>%
+  ggplot(aes(x=year, y=y, group=type, color=type, shape=type)) +
+    scale_color_discrete(name="Line",
+                       breaks = c("ave", "min"),
+                       labels = c("Average", "Minimum")) +
+      scale_shape_discrete(name="Line",
+                       breaks = c("ave", "min"),
+                       labels = c("Average", "Minimum")) +
+    geom_point() +
+    xlim(1970,2000) +
+    theme_bw() +
+    theme(legend.title = element_blank(),
+          legend.position = c(0.8, 0.2))+
+      labs(title="Average Years of Schooling",
+         x="Year",
+         y="Years (%)")
+```
+
+```{r, plotfig3, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.cap = "Enrollment and Completion Rates in Latin America", fig.width=8, fig.height=4, cache=F}
+grid.arrange(fig3a,fig3b, ncol=2)
+```
+
 These gains in coverage extend also to women. Figure 3 looks at coverage rates for women from 1970 through 2000. The left panel examines GERs for primary education for the average Latin American case in red and the lowest regional enrollment rate in blue. The average enrollment rate for women in the region was quite high by the 1970s, and while there was a small dip in the first half of the 1980s, it recovered by the second half. Improvements for the worst-performing Latin American country are quite dramatic. By the 1980s the weakest enrollment rate for women was around 60%, but by the end of the decade it was almost 90%. While there was a significant dip in the first half of the 1990s, this drop did not entirely reverse the gains of the 1980s. In short, enrollment figures for women did not seem to take a particularly hard hit in the 1980s.^[Unfortunately, there are no completion data available by gender, though there are some other historical statistics I will consider shortly. In any case, our exploration of the relationship between enrollment and completion rates suggests that these two statistics track each other closely. This implies that completion rates for girls also improved over time.] The right panel examines average years of schooling for women over 15 years of age.^[The data are compiled every five years and are shown in red for Latin America as a whole and in blue for the worst-performing countries.] The average number of years of schooling for women in Latin American countries also increased across the board.
 
 A final question relates to Latin America’s performance from a comparative perspective. Did Latin America’s education systems fail to expand the coverage of primary education compared to countries in other regions? The short answer is no. Figure 4 presents three plots that compare Latin American countries to other countries at similar levels of GDP per capita. The plots contain two LOESS regression lines: in blue I plot the worldwide average; in red I plot the developing country average, dropping Latin America from the sample.^[I subset the data to include an average for countries in North Africa and the Middle East, Sub-Saharan Africa, Southeast Asia, South Asia, and the Caribbean (including Belize, Guyana, and Suriname, but excluding Cuba, Haiti, and the Dominican Republic).] The dots represent Latin American observations only from 1970 to 1995.^[For readability I make two adjustments. I remove the standard errors and I scale the x-axis to reflect only the span of Latin American countries in the sample. Since the regression lines are local, there should be no concerns regarding any conclusions from the plots.]
+
+```{r, fig4_dataload, include=FALSE, cache=F}
+
+fig4a<-ggplot(qog, aes(gle_cgdpc, wdi_gerp)) + 
+geom_jitter(subset(qog,ht_region==2), 
+                       mapping = aes(gle_cgdpc, wdi_gerp), alpha =.2) + 
+            geom_smooth(se=F)+
+            geom_smooth(subset(qog,ht_region==3|
+                                 ht_region==4|ht_region==7|ht_region==8|ht_region==10),
+                       mapping = aes(gle_cgdpc, wdi_gerp), color="red", se=F) +
+              labs(y="Primary (% Gross)",
+                 x="GDP per capita",
+                 title = "GDP and Enrollment Rates") +
+            coord_cartesian(xlim = c(0,20000), expand = TRUE,
+                        default = FALSE, clip = "on") +
+            theme_bw()
+
+fig4b<-ggplot(qog, aes(gle_cgdpc, bl_asymf)) + 
+geom_jitter(subset(qog,ht_region==2), 
+                       mapping = aes(gle_cgdpc, bl_asymf), alpha =.2) + 
+            geom_smooth(se=F)+
+            geom_smooth(subset(qog,ht_region==3|
+                                 ht_region==4|ht_region==7|ht_region==8|ht_region==10),
+                       mapping = aes(gle_cgdpc, bl_asymf), color="red", se=F) +
+              labs(y="Years",
+                 x="GDP per capita",
+                 title = "Average Years of Schooling") +
+            coord_cartesian(xlim = c(0,20000), expand = TRUE,
+                        default = FALSE, clip = "on") +
+            theme_bw()
+
+
+
+fig4c<-ggplot(qog, aes(gle_cgdpc, bl_asyf)) + 
+            geom_jitter(subset(qog,ht_region==2), 
+                       mapping = aes(gle_cgdpc, bl_asyf), alpha = .2) + 
+            geom_smooth(se=F)+
+            geom_smooth(subset(qog,ht_region==3|
+                                 ht_region==4|ht_region==7|ht_region==8|ht_region==10),
+                       mapping = aes(gle_cgdpc, bl_asyf), color="red", se=F) +
+              labs(y="Years",
+                 x="GDP per capita",
+                 title = "Female Years of Schooling") +
+            coord_cartesian(xlim = c(0,20000), expand = TRUE,
+                        default = FALSE, clip = "on") +
+              theme_bw()
+
+
+
+```
+
+```{r, plotfig4, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.cap = "Comparative Performance of Latin American Education Systems", fig.width=8, fig.height=8, cache=F}
+grid.arrange(fig4a,fig4b,fig4c, ncol=2)
+```
 
 Across all panels Latin American countries seem to perform at or above both global and developing world averages. I discuss them clockwise from the top left. The first panel shows that Latin American gross enrollment rates are very high at all levels of income. Generally, the region seems to beat world averages when it comes to enrollment. The top right panel compares educational attainment in Latin America to that of the rest of the world. The measure of educational attainment I plot is from @barro_new_2013, and measures the average years of schooling for male and female adults over 25 years of age. The distribution of Latin American observations is less tight than in the previous plot, but it appears that Latin American countries show a normal variation compared to the global average, and appear to do better than most developing countries. However, some countries do significantly worse than those averages. The third panel looks at average years of schooling for females by age 25. Latin American countries track global averages quite closely and generally outperform other countries. Again, this is true at all levels of income.
 
@@ -151,6 +258,22 @@ Latin America’s performance is all the more notable considering that the regio
 What about the quality of education? In Latin America the notion that the quality of public education is low is widespread.^[This is a well-known trope among education specialist in the region. It also makes its way very often to editorials and news articles across every country in the region [@villareal_es_2018;@la_nacion_necesidad_2015;@molina_educacion_2007;@moreno_apos_2017] and numerous reports by international organizations since the early 1990s [@szekely_educacion_2012;@wolff_improving_1994].] To give an example, the sub-heading of a 1994 report by the Costa Rican Ministry of Education reads, “The Collapse of Costa Rican Education” [@mep_marco_1994]. Similarly, the World Bank, UNESCO, and the Inter-American Development Bank (IDB) continuously call attention to the dangerously low quality of education and fund dozens of programs each year focused on improving the quality of education. The IDB alone has 116 active education sector projects in the implementation phase across the region, spending over $2 billion since 2010. Of these funds, over $800 million is earmarked for quality of education projects.^[These are my own calculations based on IDB publicly available data. Accessed on September 3, 2018, at https://www.iadb.org/en/projects. To find these data I filtered by sector (education) and status (implementation). This number is an underestimate, since I then identified projects that had “quality” in the title. It is likely that some projects had quality-improving components that were not reflected in the title.] The focus of this section is to answer the question, What did we know then about the quality of education in the region?
 
 There is some disagreement on how to measure quality. There are two dominant ways it is addressed in the literature. The first refers to the capacity of the system to keep children on track to finish school (i.e., grade repetition). The second considers the level of learning—arguably the most important output of education systems. By looking at both of these issues in turn, I show two things. First, grade repetition across the entire region dropped substantially over time, even in the 1980s, suggesting that countries had found ways to limit grade repetition. Second, by the early 1990s there were simply no systematic, reliable data on learning outcomes in the region. In reviewing the evidence I show a mixed picture, product of data that was simply not reliable enough to make good judgments about the amount of learning done in the region.
+
+```{r, fig5_dataload, include=FALSE, cache=F}
+repeaters<-read_csv("data/repeaters.csv")
+fig5<-ggplot(repeaters, aes(y=repeaters, x=year)) +
+  geom_smooth() +
+  geom_jitter(alpha=.2) +
+                theme_bw() +
+              labs(y="Repeaters (% Enrollment)",
+                 x="Years",
+                 caption = "Source: UNESCO 2018.",
+                 title = "Primary School Repeaters")
+```
+
+```{r, plotfig5, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.cap = "Grade Repetition Rates in Latin America", fig.width=4, fig.height=3.5, cache=F}
+fig5
+```
 
 First, let’s consider grade repetition. Figure 5 plots average grade repetition in primary school across Latin America in blue. The black points show the highest measured levels of grade repetition in the region for that year.^[Uneven availability of data across countries explains sharp movement from one year to the next.] The first conclusion to draw is that grade repetition clearly trends downward for the entire period. The second point is that this trend extends to the countries with the highest rate of repeaters. The drop is steep. In the period from 1980 to 1990 the percentage of grade repeaters among the countries with the highest repetition rates dropped by nearly 10 percentage points. I do not want to discount the fact that school repetition seems to be a region-wide problem; even a repetition rate of 15 percent is unacceptably high. Yet focusing on the headline results ignores the fact that the region improved with regard to repetition, even throughout the 1980s.
 
@@ -172,6 +295,72 @@ Education reform in Latin America was predicated on improving the dismal coverag
 Thus far I have found no evidence of an overall deterioration in the coverage and quality of education in Latin America in the 1990s. Given that there is substantial variation in performance of quality and coverage across the region, it is possible that reforms were driven by countries that trailed their peers. For example, those countries with the lowest enrollment rates may have been under the most pressure to reform. Similarly, those countries that had participated in international testing initiatives may have been more likely to explore changes in their education systems. To a degree, this would be consistent with the notion that technical considerations propelled reform. In this section, I make use of regression tools to assess this possibility. To preview my findings, I do not find support for this argument.
 
 To test this simple hypothesis I present a series of bivariate plots alongside regression lines, where applicable. To do so, I construct a small dataset with one observation per each of 18 countries. As a dependent variable I use the number of education reform initiatives each country deployed in the 1990s. These data come from @grindle_despite_2004 and cover everything from curriculum changes to changes in governance. Crucially, this includes reforms whether or not they were successfully implemented, thus avoiding any bias that might arise from conflating the origins of political reform with the politics of implementing policy. As independent variables, plotted on the x-axis, I use 1990 data on 1) enrollment rates, 2) average years of schooling, 3) enrollment rates for women, and 4) a dummy variable indicating whether a country participated in the first TIMMS. The first three I take from UNESCO statistics, whereas the last is constructed based on data from @lapointe_learning_1992. I plot the dependent variable on the y-axis against each of the independent variables on the x-axis in figure 6.
+
+```{r, fig6_dataload, include=FALSE, cache=F}
+#Bivariate Regressions
+
+#Packages
+library(binsreg); library(ggplot2); library(vtable)
+
+#Read data
+data.reg<-read.csv("data/mini_dataset.csv")
+data.reg$timms<-as.factor(data.reg$timms)
+
+library(ggrepel)
+
+p1<-ggplot(data.reg, aes(y=reform_initiatives, x=enrollment_gross))
+p3<-ggplot(data.reg, aes(y=reform_initiatives, x=av_schoolyrs))
+p4<-ggplot(data.reg, aes(y=reform_initiatives, x=share_schoolf))
+p5<-ggplot(data.reg, aes(y=reform_initiatives, x=timms))
+
+
+p1<-p1+geom_point()+
+  theme_bw()+
+  geom_smooth(method="lm", se=F)+
+  geom_smooth(method="loess", se=F, color="red")+
+  geom_text_repel(data.reg,mapping=aes(label=short_name)) +
+                  theme_bw() +
+              labs(y="# Reforms",
+                 x="Enrollment (% Gross)",
+                 title = "Primary School Enrollment") 
+
+p3<-p3+geom_point()+
+  theme_bw()+
+  geom_smooth(method="lm", se=F)+
+  geom_smooth(method="loess", se=F, color="red")+
+  labs(x="Average School Years", y="Number of Reforms")+
+  geom_text_repel(data.reg,mapping=aes(label=short_name)) +
+                  theme_bw() +
+              labs(y="# Reforms",
+                 x="Years",
+                 title = "Average School Years") 
+
+
+p4<-p4+geom_point()+
+  theme_bw()+
+  geom_smooth(method="lm", se=F)+
+  geom_smooth(method="loess", se=F, color="red")+
+  geom_text_repel(data.reg,mapping=aes(label=short_name)) +
+                  theme_bw() +
+              labs(y="# Reforms",
+                 x="Schooling (% Female)",
+                 title = "Average School Years") 
+
+p5<-p5+geom_point()+
+  theme_bw()+
+  geom_smooth(method="lm", se=F)+
+  geom_smooth(method="loess", se=F, color="red")+
+  geom_text_repel(data.reg,mapping=aes(label=short_name)) +
+                  theme_bw() +
+              labs(y="# Reforms",
+                 x="TIMMS",
+                 title = "Participation in TIMMS") 
+```
+
+```{r, plotfig6, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.cap = "Regressing Education Reform on Various Covariates", fig.width=8, fig.height=8, cache=F}
+grid.arrange(p1, p3, p5, p4, ncol=2)
+
+```
 
 Figure 6 has four panels, one for each of the independent variables. The first three panels, moving clockwise from the top left panel, contain both a (linear) regression line and a LOESS line, in blue and red, respectively. I also place the country name abbreviation near the corresponding dot. The plots generally tell the same story. Consider first gross enrollment rates: aside from Guatemala and perhaps Bolivia, the countries doing the most reforms have above average enrollment rates. Next, consider the plot on average school years. Countries with the fewest average years of schooling seem as likely as those with the most years of schooling to commit to reforms. It is those countries near the regional average that seem to be doing most of the work. Looking at those countries where women have completed primary schooling reveals that as the share of educated females increased, the number of reforms dropped. However, this line seems to be driven in part by Bolivia; the LOESS line is rather flat after Bolivia. Finally, participating in TIMSS seems to have no clear relationship to the number of reforms.
 
