@@ -1,9 +1,9 @@
 ---
-title: ' Flying Blind: Education Reform in Latin America in the 1990s'
+title: 'Flying Blind: Education Reform in Latin America in the 1990s'
 author: "Thomas R. Vargas^[Corresponding address:
-  varga081@umn.edu. I thank Teri Caraway, Brent Edwards, John Freeman, Carly Potz-Nielsen, Claire Le Barebenchon, Dave Lopez, and David Samuels for their comments on previous drafts of this papers. A previous version of this paper was presented at the Midwest Political Science Association Meeting, and seminars at the University of Minnesota and Duke University. Any remaining mistakes are my own.]"
+  varga081@umn.edu. I thank Teri Caraway, Brent Edwards, John Freeman, Carly Potz-Nielsen, Claire Le Barebenchon, Dave Lopez, and David Samuels for their comments on previous drafts of this papers. A previous version of this paper was presented at the University of Minnesota and the Midwest Political Science Association Meeting. Any remaining mistakes are my own.]"
 abstract: \singlespacing Conventional wisdom suggests that Latin American countries reformed public education in the 1990s in response to a crisis of coverage and quality.  Yet, in terms of access, Latin American countries had achieved relatively high enrolment and completion rates by 1990.  With regards to quality, there was simply no high-quality evidence showing weak or lowering standards. In short, by the early 1990s, there was very little scientific evidence of a crisis of public education in Latin America. By uncovering these patterns, this paper argues that political scientist should revisit the origins of education reform efforts in the 1990s.  
-date: "March 31, 2020"
+date: 'Accepted at the *International Journal of Educational Reform*.'
 bibliography: bib.bib
 mainfont: Times New Roman
 sansfont: Times New Roman
@@ -28,6 +28,27 @@ output:
 
 Since the establishment of modern public education systems in Latin America in the mid-twentieth century, governments have proposed and executed reforms of all types. For example, countries have long wrestled with changes to curricula, hiring standards for teachers, and expenditures on education. But following the 1980s debt crisis and the adoption of democracy and economic liberalization around the same time, changes to public education accelerated. For the first time a region-wide conversation regarding the governance of education systems came to the table.^[I define the governance of education systems as the institutional arrangements that describe who has authority over the management of public schools. In the Latin America of the 1990s these changes generally meant decentralization—for example, via the devolution of schools to subnational states (e.g., Mexico), the co-management of schools with municipalities (e.g., Colombia), and the establishment of schools managed directly by the local community (e.g., El Salvador), among others.] Figure 1 plots the rate of adoption of governance reforms in the education sector in Latin America from 1989 through 2005. Why did so many Latin American countries jump on the reform bandwagon?
 
+```{r, fig1_dataload, include=FALSE, cache=F}
+#Packages
+library(ggplot2)
+
+# Load data
+sum_name<-read.csv("data/decentral_sum.csv")
+
+fig1<-ggplot(sum_name, aes(x=year, y=decentralized_countries))+
+            geom_step(size = 1.25) +
+            theme_bw() +
+            labs(y="Cumulative Adoption",
+                 x="Year",
+                 caption = "Source: Vargas 2018.") +
+            scale_x_continuous(breaks = seq(1990,2000,2)) +
+            coord_cartesian(xlim=c(1990,2000))
+```
+
+```{r, plotfig1, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.cap = "Rate of Adoption of Education Governance Reforms in Latin America", fig.width=3.5, fig.height=3, cache=F}
+fig1
+```
+
 The conventional answer to this question is straightforward: education in Latin America, to paraphrase Merilee @grindle_despite_2004, was broken. Specifically, reform advocates pointed to high dropout rates, gender and income inequality in access to education, inefficient public spending, and low quality of education [@birdsall_education_1998; @idb_facing_1998; @preal_lagging_2001; @reimers_role_1997; @reimers_impact_1991]. The political science literature has taken this premise mostly as a given [@grindle_despite_2004;@kaufman_crucial_2004; @pribble_welfare_2013], focusing instead on the politics of reform implementation [@corrales_politics_1999; @graham_improving_1999]. But was the provision of public education across the region truly so dismal? The purpose of this paper is to answer this question by looking at the evidence available to policymakers in the 1990s.
 
 Contrary to this picture of a widespread education sector catastrophe, by the early 1990s Latin America’s public education systems had made substantial achievements in the face of difficult circumstances. The education systems of the region improved access to education in every country, across many subgroups, despite a decade-long recovery from the debt crisis. Characterizing the state of education in Latin America as dismal requires making use of “snapshot” statistics. A cross-sectional analysis of literacy rates in the early 1990s would obscure the fact that between 1950 and 1990 these countries reduced illiteracy rates from 49% to 14.5%, a rate of about one percentage point per year, even as the population was growing [@idb_economic_1996].
@@ -42,6 +63,80 @@ The remainder of this paper is divided into four sections. The first two examine
 
 Let us examine the state of education in Latin America by the 1990s. Consider first the question of access: did Latin America’s education systems fail to expand the coverage of primary education over time? In short, no; coverage saw across the board improvements even while Latin America was recovering from the debt crisis.
 
+```{r, fig2_dataload, include=FALSE, cache=F}
+#Packages
+# Load data
+library(tidyverse)
+qog<-read_csv("data/qog_std_ts_jan19.csv") %>%
+  select(ccode, cname, year, wdi_gerpf, wdi_nerpf, ccodecow, ccodealp,
+         wdi_expedu, bl_asymf, bl_lpf, bl_lpmf, gea_ea1524f, gea_ea1524m,
+         wdi_gerp, wdi_expedup, ht_region, gle_cgdpc, gle_rgdpc)
+write_csv(qog, "data/qog_std_ts_jan19.csv")
+
+hist(qog$ht_region)
+
+fig2a<-qog %>%
+  filter(ht_region==2) %>%
+  group_by(year) %>%
+  summarise(ave = mean(wdi_gerpf,na.rm = TRUE),
+            min = min(wdi_gerpf,na.rm = TRUE)) %>%
+  pivot_longer(-year, names_to = "type", values_to = "y") %>%
+  ggplot(aes(x=year, y=y, group=type, color=type, linetype=type)) +
+    scale_color_discrete(name="Line",
+                       breaks = c("ave", "min"),
+                       labels = c("Average", "Minimum")) +
+      scale_linetype_discrete(name="Line",
+                       breaks = c("ave", "min"),
+                       labels = c("Average", "Minimum")) +
+    geom_line() +
+    xlim(1970,2000) +
+    ylim(40,120) +
+    theme_bw() +
+    theme(legend.title = element_blank(),
+          legend.position = c(0.8, 0.2))+
+      labs(title="Primary School Enrollment Rates",
+         x="Year",
+         y="Gross Share (%)")
+
+data_global<-qog %>%
+  filter(ht_region!=2) %>%
+  group_by(year) %>%
+  summarise(ave = mean(wdi_nerpf,na.rm = TRUE)) %>%
+  mutate(type="global")
+
+data_lac<-qog %>%
+  filter(ht_region==2) %>%
+  group_by(year) %>%
+  summarise(ave = mean(wdi_nerpf,na.rm = TRUE)) %>%
+  mutate(type="lac")
+
+data_together<-rbind(data_global, data_lac)
+
+fig2b<-ggplot(data_together, aes(x=year, y=ave, group=type, color=type, linetype=type)) +
+    geom_line() +
+    scale_color_discrete(name="Line",
+                       breaks = c("global", "lac"),
+                       labels = c("Global", "LAC")) +
+      scale_linetype_discrete(name="Line",
+                       breaks = c("global", "lac"),
+                       labels = c("Global", "LAC")) +
+    geom_line() +
+    xlim(1970,2000) +
+    ylim(65,100) +
+    theme_bw() +
+    theme(legend.title = element_blank(),
+          legend.position = c(0.8, 0.2))+
+    labs(title="Primary School Completion Rates",
+         x="Year",
+         y="Gross Share (%)")
+
+
+library(gridExtra)
+```
+
+```{r, plotfig2, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.cap = "Enrollment and Completion Rates in Latin America", fig.width=8, fig.height=4, cache=F}
+grid.arrange(fig2a,fig2b, ncol=2)
+```
 
 The left panel of Figure 2 graphs average gross enrollment rates (GER) in primary education for Latin America in red, and the GER for the poorest-performing country in the region in green.^[Data are drawn from the United Nations Educational, Scientific, and Cultural Organization (UNESCO) Institute for Statistics.4 Enrollment rates are defined as “the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown,” whereas completion rates are given by “the number of new entrants (...minus repeaters) in the last grade of primary education, regardless of age, divided by the population at the entrance age for the last grade of primary education.” The practical distinction between both measures is that enrollment rates can exceed 100% because they include children who start early or repeat grades.] The left panel presents a generally rosy picture of education: by the 1990s public education had achieved a high level of coverage. This is especially true for the worst-performing countries. From 1970 to 2000 the lowest enrollment rate in the region shot up by nearly 40 percentage points, from under 60% to about 100%. However, since enrollment rates do not account for children repeating grades or starting late, the left panel is consistent with not only improving coverage but also, for example, declining completion rates. For instance, it is possible that economic circumstances made schooling more difficult or costly for Latin American households, generating more grade repeaters or late starters.^[The precise effect of aggregate negative income shocks on household schooling decisions is ambiguous because of competing income and substitution effects [@binder_schooling_1999;@ferreira_aggregate_2009]).]
 
